@@ -47,7 +47,7 @@ const Dashboard = () => {
   const fetchPasswords = async () => {
     try {
       setLoading(true);
-      const response = await fetch(import.meta.env.FRONTED_URL+'/passwords', {
+      const response = await fetch(import.meta.env.VITE_FRONTEND_URL+'/passwords', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const Dashboard = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(import.meta.env.FRONTED_URL+'/passwords', {
+      const response = await fetch(import.meta.env.VITE_FRONTEND_URL+'/passwords', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ const Dashboard = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch(import.meta.env.FRONTED_URL+`/passwords/${editingPassword._id}`, {
+      const response = await fetch(import.meta.env.VITE_FRONTEND_URL+`/passwords/${editingPassword._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -215,7 +215,7 @@ const Dashboard = () => {
     const passwordId = passwordToDelete._id;
     
     try {
-      const response = await fetch(import.meta.env.FRONTED_URL+`/passwords/${passwordId}`, {
+      const response = await fetch(import.meta.env.VITE_FRONTEND_URL+`/passwords/${passwordId}`, {
         method: 'DELETE',
         credentials: 'include',
       });
@@ -245,7 +245,7 @@ const Dashboard = () => {
   
   const handleLogout = async () => {
     try {
-      await fetch(import.meta.env.FRONTED_URL+'/auth/logout', {
+      await fetch(import.meta.env.VITE_FRONTEND_URL+'/auth/logout', {
         method: 'POST',
         credentials: 'include',
         headers: {

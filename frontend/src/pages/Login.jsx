@@ -15,14 +15,14 @@ const Login = () => {
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
-  console.log(import.meta.env.FRONTED_URL);
+  console.log(import.meta.env.VITE_FRONTEND_URL);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
     try {
-      const response = await fetch(import.meta.env.FRONTED_URL+'/auth/login', {
+      const response = await fetch(import.meta.env.VITE_FRONTEND_URL+'/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

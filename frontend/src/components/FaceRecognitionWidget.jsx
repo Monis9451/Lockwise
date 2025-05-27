@@ -100,7 +100,7 @@ const FaceRecognitionWidget = ({ userId }) => {
       const descriptor = Array.from(detection.descriptor);
       
       const timestamp = Date.now();
-      const response = await fetch(`http://localhost:5000/face-data/face-verify?t=${timestamp}`, {
+      const response = await fetch(import.meta.env.VITE_FRONTEND_URL+`/face-data/face-verify?t=${timestamp}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
