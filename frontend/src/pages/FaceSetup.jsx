@@ -128,7 +128,7 @@ const FaceSetup = () => {
 
       const faceDescriptor = Array.from(detections[0].descriptor);
       
-      const response = await fetch('http://localhost:5000/face-data/save', {
+      const response = await fetch(import.meta.env.FRONTED_URL+'/face-data/save', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

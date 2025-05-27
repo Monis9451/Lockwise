@@ -108,7 +108,7 @@ const FaceVerify = () => {
                 
                 setProgress((prev) => Math.min(prev + 10, 90));
 
-                const response = await fetch('http://localhost:5000/face-data/verify', {
+                const response = await fetch(import.meta.env.FRONTED_URL+'/face-data/verify', {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
