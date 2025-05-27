@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['http://localhost:5173', 'http://localhost:8080'];
+  const allowedOrigins = ['http://localhost:5173','https://lockwise-backend.vercel.app', 'http://localhost:8080'];
   const origin = req.headers.origin;
   
   if (allowedOrigins.includes(origin)) {
