@@ -37,7 +37,9 @@ app.use((req, res, next) => {
 });
 
 connectDB();
-
+app.get("/", (req, res) => {
+    res.send("Lock Wise is running...");
+});
 app.use('/auth', authRouter);
 
 app.use('/passwords', passwordRouter);
